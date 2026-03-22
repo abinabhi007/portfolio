@@ -1,0 +1,209 @@
+@use '../../styles/tokens' as *;
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 5%;
+  padding-top: 80px;
+  align-items: center;
+  gap: 4rem;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 100px;
+  }
+}
+
+.heroText {
+  position: relative;
+  z-index: 1;
+}
+
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--accent);
+  }
+}
+
+.heroName {
+  font-family: $serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+
+  em {
+    font-style: italic;
+    color: var(--accent);
+  }
+}
+
+.heroTagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+  max-width: 460px;
+  line-height: 1.75;
+}
+
+.heroCta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
+}
+
+.heroVisual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.avatarWrap {
+  position: relative;
+  width: 360px;
+  height: 420px;
+}
+
+.avatarBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--surface-soft) 0%, var(--surface-soft-strong) 100%);
+  border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+  animation: morphBlob 8s ease-in-out infinite;
+}
+
+@keyframes morphBlob {
+  0%, 100% { border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%; }
+  33% { border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%; }
+  66% { border-radius: 50% 50% 60% 40% / 60% 40% 50% 50%; }
+}
+
+.avatarInitials {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $serif;
+  font-size: 7rem;
+  color: var(--accent);
+  opacity: 0.18;
+  letter-spacing: -0.05em;
+}
+
+.avatarCard {
+  position: absolute;
+  bottom: -20px;
+  left: -30px;
+  background: var(--surface-base);
+  border-radius: 12px;
+  padding: 1rem 1.4rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.cardDot {
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+.cardLabel {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cardSub {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.avatarCard2 {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  background: var(--surface-base);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  box-shadow: var(--shadow-soft);
+  font-size: 0.82rem;
+  animation: floatCard2 5s ease-in-out infinite;
+}
+
+@keyframes floatCard2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.card2Title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.stackPills {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}

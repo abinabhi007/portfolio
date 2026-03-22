@@ -1,0 +1,13 @@
+@use '../../styles/tokens' as *;
+
+.footer {
+  background: var(--surface-inverse);
+  color: var(--text-inverse-muted);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+
+  span {
+    color: var(--accent);
+  }
+}

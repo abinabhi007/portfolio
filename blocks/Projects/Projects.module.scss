@@ -1,0 +1,109 @@
+@use '../../styles/tokens' as *;
+
+.projects {
+  background: var(--surface-base);
+  padding: 6rem 5%;
+}
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: var(--accent);
+  }
+}
+
+.sectionTitle {
+  font-family: $serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.projectCard {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--page-bg);
+  transition: transform 0.25s, box-shadow 0.25s;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+.projectImg {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, var(--accent-soft), var(--surface-soft-strong));
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.04));
+  }
+}
+
+.projectBody {
+  padding: 1.5rem;
+}
+
+.projectTitle {
+  font-family: $serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.projectDesc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.projectStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.stackTag {
+  background: var(--surface-base);
+  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  color: var(--text-muted);
+}

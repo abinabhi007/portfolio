@@ -1,0 +1,29 @@
+@use '../../styles/tokens' as *;
+
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: #d4622a;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+}
+
+.cursorRing {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid #d4622a;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, opacity 0.2s ease;
+}

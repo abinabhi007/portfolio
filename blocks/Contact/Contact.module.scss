@@ -1,0 +1,168 @@
+@use 'sass:color';
+@use '../../styles/tokens' as *;
+
+.contact {
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+  padding: 6rem 5%;
+}
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: var(--accent);
+  }
+}
+
+.sectionTitle {
+  font-family: $serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-inverse);
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.contactText {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-inverse-muted);
+}
+
+.contactLinks {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--text-inverse-muted);
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--surface-inverse-soft);
+  cursor: none;
+
+  &:hover {
+    color: var(--text-inverse);
+
+    .linkIcon {
+      background: var(--accent);
+
+      i {
+        color: var(--text-inverse);
+      }
+    }
+  }
+}
+
+.linkIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--surface-inverse-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+
+  i {
+    color: var(--accent);
+    line-height: 1;
+  }
+}
+
+.linkInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkTitle {
+  color: var(--text-inverse);
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+}
+
+.linkSub {
+  color: var(--text-inverse-muted);
+  font-size: 0.85rem;
+}
+
+.contactCta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactBigEmail {
+  font-family: $serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--text-inverse);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.contactCtaText {
+  font-size: 0.95rem;
+  color: var(--text-inverse-muted);
+  margin-bottom: 2rem;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--accent);
+  width: fit-content;
+  transition: all 0.25s ease;
+  cursor: none;
+
+  &:hover {
+    background: color.adjust($accent, $lightness: -8%);
+    border-color: color.adjust($accent, $lightness: -8%);
+    transform: translateY(-2px);
+    color: #fff;
+  }
+}
