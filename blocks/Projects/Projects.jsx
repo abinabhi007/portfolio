@@ -43,7 +43,7 @@ export default function Projects() {
             <div className={styles.projectBody}>
               <h3 className={styles.projectTitle}>{project.title}</h3>
               <p className={styles.projectDesc}>{project.desc}</p>
-              <div className={styles.projectStack}>
+              {/* <div className={styles.projectStack}>
                 {project.stack.map((tag, tagIndex) => (
                   <span
                     key={tag}
@@ -54,7 +54,7 @@ export default function Projects() {
                     {tag}
                   </span>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         ))}
