@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './CustomCursor.module.scss';
 
 export default function CustomCursor() {
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
   const cursorRef = useRef(null);
   const ringRef = useRef(null);
   const mouseX = useRef(0);
@@ -12,6 +13,19 @@ export default function CustomCursor() {
   const ringY = useRef(0);
 
   useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    if (!isLargeScreen) return;
+
     const cursor = cursorRef.current;
     const ring = ringRef.current;
 
@@ -62,7 +76,9 @@ export default function CustomCursor() {
       });
       cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [isLargeScreen]);
+
+  if (!isLargeScreen) return null;
 
   return (
     <>
