@@ -54,10 +54,44 @@ export default function Navbar() {
         Abin
       </Link>
 
+      <div className={styles.navDesktop}>
+        <ul className={styles.navLinks}>
+          {navItems.map((id) => (
+            <li key={id}>
+              <a
+                href={`#${id}`}
+                className={activeSection === id ? styles.active : ''}
+                onClick={closeMenu}
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          type="button"
+          className={`${styles.themeToggle} ${styles.desktopThemeToggle} ${theme === 'dark' ? styles.isDark : ''}`}
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          <span className={`${styles.toggleSideIcon} ${styles.toggleSun}`} aria-hidden="true">
+            <i className="bi bi-sun-fill" />
+          </span>
+          <span className={`${styles.toggleSideIcon} ${styles.toggleMoon}`} aria-hidden="true">
+            <i className="bi bi-moon-stars-fill" />
+          </span>
+          <span className={styles.toggleIcon} aria-hidden="true">
+            <i className={`bi ${theme === 'dark' ? 'bi-moon-stars-fill' : 'bi-sun-fill'}`} />
+          </span>
+        </button>
+      </div>
+
       <div className={styles.navControls}>
         <button
           type="button"
-          className={`${styles.themeToggle} ${theme === 'dark' ? styles.isDark : ''}`}
+          className={`${styles.themeToggle} ${styles.mobileThemeToggle} ${theme === 'dark' ? styles.isDark : ''}`}
           onClick={toggleTheme}
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
@@ -87,7 +121,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      <div className={`${styles.navActions} ${isMenuOpen ? styles.navActionsOpen : ''}`} id="mobile-navigation">
+      <div className={`${styles.navActions} ${isMenuOpen ? styles.navActionsOpen : ''} `} id="mobile-navigation">
         <ul className={styles.navLinks}>
           {navItems.map((id) => (
             <li key={id}>

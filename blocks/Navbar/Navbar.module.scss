@@ -33,9 +33,15 @@
   z-index: 2;
 }
 
-.navActions {
+.navDesktop {
   display: flex;
   align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.navActions {
+  display: none;
 }
 
 .navLinks {
@@ -85,6 +91,14 @@
     box-shadow: 0 14px 36px rgba(0, 0, 0, 0.14);
     transform: translateY(-2px);
   }
+}
+
+.desktopThemeToggle {
+  display: inline-flex;
+}
+
+.mobileThemeToggle {
+  display: none;
 }
 
 .toggleSideIcon {
@@ -196,11 +210,19 @@
     padding: 1rem 5%;
   }
 
+  .navDesktop {
+    display: none;
+  }
+
   .menuToggle {
     display: inline-flex;
   }
 
   .navActions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
     position: absolute;
     top: calc(100% + 0.75rem);
     left: 5%;
@@ -247,5 +269,13 @@
         color: var(--accent);
       }
     }
+  }
+
+  .desktopThemeToggle {
+    display: none;
+  }
+
+  .mobileThemeToggle {
+    display: inline-flex;
   }
 }
