@@ -123,46 +123,173 @@
   font-size: 0.85rem;
 }
 
-.contactCta {
+.formCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(8px);
+
+  @media (max-width: 600px) {
+    padding: 1.5rem;
+  }
+}
+
+.formTitle {
+  font-family: $serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--text-inverse);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 1.5rem;
 }
 
-.contactBigEmail {
-  font-family: $serif;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  color: var(--text-inverse);
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.03em;
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.contactCtaText {
-  font-size: 0.95rem;
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: var(--text-inverse-muted);
-  margin-bottom: 2rem;
+  font-weight: 600;
 }
 
-.ctaBtn {
+.input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  color: var(--text-inverse);
+  font-family: $sans;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  outline: none;
+  resize: none;
+  cursor: none;
+
+  &:focus {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 0 3px rgba($accent, 0.15);
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  option {
+    background: #11141a;
+    color: #fff;
+  }
+}
+
+.submitBtn {
+  align-self: flex-start;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.75rem;
-  font-size: 0.875rem;
+  padding: 0.85rem 2rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  border-radius: 4px;
-  text-decoration: none;
+  border-radius: 99px;
   background: var(--accent);
   color: #fff;
   border: 2px solid var(--accent);
   width: fit-content;
   transition: all 0.25s ease;
   cursor: none;
+  box-shadow: 0 8px 20px rgba(212, 98, 42, 0.25);
 
-  &:hover {
-    background: color.adjust($accent, $lightness: -8%);
-    border-color: color.adjust($accent, $lightness: -8%);
+  &:hover:not(:disabled) {
+    background: color.adjust($accent, $lightness: -6%);
+    border-color: color.adjust($accent, $lightness: -6%);
     transform: translateY(-2px);
-    color: #fff;
+    box-shadow: 0 12px 28px rgba(212, 98, 42, 0.35);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: wait;
   }
 }
+
+.errorMessage {
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  margin-top: -0.25rem;
+}
+
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 0;
+  gap: 1.25rem;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.successIcon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: rgba(212, 98, 42, 0.12);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+.successTitle {
+  font-family: $serif;
+  font-size: 1.75rem;
+  color: var(--text-inverse);
+}
+
+.successText {
+  color: var(--text-inverse-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.resetBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-inverse);
+  padding: 0.5rem 1.25rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-inverse);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
