@@ -2,22 +2,22 @@ import styles from './Skills.module.scss';
 
 const skillGroups = [
   {
-    icon: '💻',
+    icon: 'code',
     title: 'Programming Languages',
     items: ['Python', 'JavaScript', 'HTML5', 'CSS3'],
   },
   {
-    icon: '⚙️',
+    icon: 'layers',
     title: 'Frameworks & Libraries',
     items: ['Django', 'React.js', 'Next.js', 'Bootstrap'],
   },
   {
-    icon: '🗄️',
+    icon: 'database',
     title: 'Databases',
     items: ['MySQL', 'MongoDB'],
   },
   {
-    icon: '🛠️',
+    icon: 'construction',
     title: 'Tools & Technologies',
     items: ['Git & GitHub', 'REST APIs', 'Postman', 'Responsive Web Design'],
   },
@@ -41,7 +41,9 @@ export default function Skills() {
             data-aos="fade-up"
             style={{ '--aos-delay': `${120 + index * 90}ms` }}
           >
-            <div className={styles.skillGroupIcon}>{group.icon}</div>
+            <div className={styles.skillGroupIcon}>
+              <span className="material-symbols-outlined">{group.icon}</span>
+            </div>
             <div className={styles.skillGroupTitle}>{group.title}</div>
             <ul className={styles.skillList}>
               {group.items.map((item) => (

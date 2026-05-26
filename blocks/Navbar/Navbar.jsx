@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './Navbar.module.scss';
 
-const navItems = ['about', 'skills', 'projects', 'contact'];
+const navItems = ['about',  'projects', 'skills', 'contact'];
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('');

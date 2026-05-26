@@ -73,9 +73,13 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: $sans;
   background: var(--page-bg);
   color: var(--text-primary);

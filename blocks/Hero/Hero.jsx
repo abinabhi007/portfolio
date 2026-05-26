@@ -5,7 +5,7 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.heroText} data-aos="fade-right">
         <div className={styles.heroEyebrow} data-aos="fade-up" style={{ '--aos-delay': '80ms' }}>
-          Associate Software Engineer
+          Software Engineer
         </div>
         <h1 className={styles.heroName} data-aos="fade-up" style={{ '--aos-delay': '160ms' }}>
           Abin &nbsp;<em>HN.</em>
