@@ -4,12 +4,12 @@ const skillGroups = [
   {
     icon: 'code',
     title: 'Programming Languages',
-    items: ['Python', 'JavaScript', 'HTML5', 'CSS3'],
+    items: ['Python', 'Node.js', 'JavaScript', 'HTML5', , 'TypeScript'],
   },
   {
     icon: 'layers',
     title: 'Frameworks & Libraries',
-    items: ['Django', 'React.js', 'Next.js', 'Bootstrap'],
+    items: ['Django', 'Express', 'React.js', 'Next.js', 'Bootstrap'],
   },
   {
     icon: 'database',
@@ -19,7 +19,7 @@ const skillGroups = [
   {
     icon: 'construction',
     title: 'Tools & Technologies',
-    items: ['Git & GitHub', 'REST APIs', 'Postman', 'Responsive Web Design'],
+    items: ['Git & GitHub', 'REST APIs', 'Postman'],
   },
 ];
 

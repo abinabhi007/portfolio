@@ -3,7 +3,14 @@ import styles from './Projects.module.scss';
 
 const projects = [
   {
-    icon: 'celebration',
+    icon: 'sports_soccer',
+    title: 'Dreamcup',
+    desc: 'An elite performance fantasy football platform, allowing users to draft athletes, track real-time stats, and compete in high-stakes matches.',
+    stack: ['Next.js', 'Node.js', 'MongoDB', 'Sass', 'Bootstrap', 'Realtime API', 'Rest API'],
+    link: 'https://dreamcup.vercel.app'
+  },
+  {
+    icon: 'redeem',
     title: 'Loyal Events & Holidays',
     desc: 'A professional event management and tour planning platform. Features dynamic event listings, customized travel galleries, and contact/booking forms integrated with a Nodemailer backend.',
     stack: ['Next.js', 'React', 'TypeScript', 'Sass', 'Nodemailer'],
@@ -14,19 +21,7 @@ const projects = [
     title: 'SaaS E-Commerce Platform',
     desc: 'Contributed to building a scalable SaaS-based e-commerce platform on Skartio AI Cloud. Developed dynamic frontend components, integrated REST APIs, and built responsive UIs for online store management.',
     stack: ['React.js', 'Django', 'REST API', 'MySQL'],
-    link:"https://skartio.com/apps/themestore/?stream=ECOMMERCE"
-  },
-  {
-    icon: 'web',
-    title: 'Full-Stack Web Application',
-    desc: 'A full-stack web application built with Django backend and React frontend. Features user authentication, dynamic data rendering, and a clean responsive design optimised for all screen sizes.',
-    stack: ['Django', 'React', 'Bootstrap', 'MongoDB'],
-  },
-  {
-    icon: 'api',
-    title: 'REST API Service',
-    desc: 'Designed and implemented a RESTful API service with Django REST Framework. Includes token-based authentication, data serialisation, filtering endpoints, and full API documentation via Postman.',
-    stack: ['Python', 'Django REST', 'Postman', 'MySQL'],
+    link: "https://skartio.com/apps/themestore/?stream=ECOMMERCE"
   },
 ];
 
