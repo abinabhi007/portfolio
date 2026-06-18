@@ -11,20 +11,20 @@ const projects = [
     github: 'https://github.com/abinabhi007/DreamCup'
   },
   {
+    icon: 'shopping_bag',
+    title: 'SaaS E-Commerce Platform',
+    desc: 'Contributed to building a scalable SaaS-based e-commerce platform on Skartio AI Cloud. Developed dynamic frontend components, integrated REST APIs, and built responsive UIs for online store management.',
+    stack: ['Next.js', 'Redux Toolkit', 'REST API', 'Sass', 'Bootstrap'],
+    link: "https://skartio.com/apps/themestore/?stream=ECOMMERCE",
+    github: ''
+  },
+  {
     icon: 'redeem',
     title: 'Loyal Events & Holidays',
     desc: 'A professional event management and tour planning platform. Features dynamic event listings, customized travel galleries, and contact/booking forms integrated with a Nodemailer backend.',
     stack: ['Next.js', 'React', 'TypeScript', 'Sass', 'Nodemailer'],
     link: "https://loyal-events.vercel.app/",
     github: 'https://github.com/abinabhi007/loyal-events'
-  },
-  {
-    icon: 'shopping_bag',
-    title: 'SaaS E-Commerce Platform',
-    desc: 'Contributed to building a scalable SaaS-based e-commerce platform on Skartio AI Cloud. Developed dynamic frontend components, integrated REST APIs, and built responsive UIs for online store management.',
-    stack: ['React.js', 'Django', 'REST API', 'MySQL'],
-    link: "https://skartio.com/apps/themestore/?stream=ECOMMERCE",
-    github: ''
   },
 ];
 

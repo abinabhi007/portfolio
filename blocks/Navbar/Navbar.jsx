@@ -9,10 +9,13 @@ const navItems = ['about',  'projects', 'skills', 'contact'];
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(() => {
-    if (typeof document === 'undefined') return 'light';
-    return document.documentElement.dataset.theme || 'light';
-  });
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      setTheme(document.documentElement.dataset.theme || 'light');
+    }
+  }, []);
 
   useEffect(() => {
     const sections = document.querySelectorAll('section[id]');
