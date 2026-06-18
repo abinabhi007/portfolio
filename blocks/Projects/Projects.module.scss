@@ -107,3 +107,35 @@
   border-radius: 20px;
   color: var(--text-muted);
 }
+
+.projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.linkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background: var(--surface-base);
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  i {
+    font-size: 1rem;
+  }
+}

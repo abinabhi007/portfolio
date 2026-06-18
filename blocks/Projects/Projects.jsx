@@ -5,23 +5,26 @@ const projects = [
   {
     icon: 'sports_soccer',
     title: 'Dreamcup',
-    desc: 'An elite performance fantasy football platform, allowing users to draft athletes, track real-time stats, and compete in high-stakes matches.',
-    stack: ['Next.js', 'Node.js', 'MongoDB', 'Sass', 'Bootstrap', 'Realtime API', 'Rest API'],
-    link: 'https://dreamcup.vercel.app'
+    desc: 'Full-stack fantasy football platform featuring JWT authentication, fantasy team management, captain/vice-captain selection, live World Cup data integration, leaderboards, and real-time match tracking.',
+    stack: ['Next.js', 'Node.js', 'JWT Auth', 'Express.js', 'MongoDB', 'football-data.org API'],
+    link: 'https://dreamcup.vercel.app',
+    github: 'https://github.com/abinabhi007/DreamCup'
   },
   {
     icon: 'redeem',
     title: 'Loyal Events & Holidays',
     desc: 'A professional event management and tour planning platform. Features dynamic event listings, customized travel galleries, and contact/booking forms integrated with a Nodemailer backend.',
     stack: ['Next.js', 'React', 'TypeScript', 'Sass', 'Nodemailer'],
-    link: "https://loyal-events.vercel.app/"
+    link: "https://loyal-events.vercel.app/",
+    github: 'https://github.com/abinabhi007/loyal-events'
   },
   {
     icon: 'shopping_bag',
     title: 'SaaS E-Commerce Platform',
     desc: 'Contributed to building a scalable SaaS-based e-commerce platform on Skartio AI Cloud. Developed dynamic frontend components, integrated REST APIs, and built responsive UIs for online store management.',
     stack: ['React.js', 'Django', 'REST API', 'MySQL'],
-    link: "https://skartio.com/apps/themestore/?stream=ECOMMERCE"
+    link: "https://skartio.com/apps/themestore/?stream=ECOMMERCE",
+    github: ''
   },
 ];
 
@@ -37,8 +40,9 @@ export default function Projects() {
 
       <div className={styles.projectsGrid}>
         {projects.map((project, index) => {
-          const CardContent = (
+          return (
             <div
+              key={project.title}
               className={styles.projectCard}
               data-aos="reveal"
               style={{ '--aos-delay': `${120 + index * 110}ms` }}
@@ -63,22 +67,19 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
+                <div className={styles.projectLinks}>
+                  {project.github && (
+                    <Link href={project.github} target="_blank" className={styles.linkBtn} style={{ cursor: 'none' }}>
+                      <i className="bi bi-github"></i> Source
+                    </Link>
+                  )}
+                  {project.link && (
+                    <Link href={project.link} target="_blank" className={styles.linkBtn} style={{ cursor: 'none' }}>
+                      <i className="bi bi-box-arrow-up-right"></i> Live
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
-          );
-
-          return project.link ? (
-            <Link
-              href={project.link}
-              target="_blank"
-              key={project.title}
-              style={{ textDecoration: 'none', color: 'inherit', cursor: 'none' }}
-            >
-              {CardContent}
-            </Link>
-          ) : (
-            <div key={project.title} style={{ cursor: 'none' }}>
-              {CardContent}
             </div>
           );
         })}
