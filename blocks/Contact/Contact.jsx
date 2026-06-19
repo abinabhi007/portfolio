@@ -193,7 +193,7 @@ export default function Contact() {
                     id="contact-name"
                     name="name"
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="Enter your name"
                     required
                   />
                 </div>
@@ -205,7 +205,7 @@ export default function Contact() {
                     id="contact-email"
                     name="email"
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder="Enter your email address"
                     required
                   />
                 </div>
